@@ -1164,6 +1164,7 @@ MonoBehaviour:
   PlayerBag: {fileID: 1173457875}
   Selection: {fileID: 1573924566}
   DroppedCanvas: {fileID: 1992614384}
+  m_PlayerAttack: {fileID: 0}
 --- !u!224 &1573924569
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1202,6 +1203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 1.2
   pm: {fileID: 1756414029}
+  m_PlayerAnimator: {fileID: 0}
 --- !u!61 &1573924571
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1298,6 +1300,7 @@ MonoBehaviour:
   status: {fileID: 1513247019}
   Force: 1.2
   pm: {fileID: 1756414029}
+  m_playerAnimation: {fileID: 0}
 --- !u!1 &1756414027
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,6 +1419,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 846585052}
     m_Modifications:
+    - target: {fileID: 1728601136570961081, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
+      propertyPath: m_ColliderPaths.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3634917413687258237, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1459,6 +1466,10 @@ PrefabInstance:
     - target: {fileID: 3634917413687258237, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3917956819603892171, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7662145636261590409, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
       propertyPath: m_Name
