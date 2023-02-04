@@ -12,7 +12,6 @@ public class WordHolder : MonoBehaviour
     
     public void DropWord(string s, Transform droppedCanvas)
     {
-        
         Debug.Log("Drop");
         GameObject gm = GameObject.Instantiate(droppedWord, transform.position, Quaternion.identity, droppedCanvas);
         gm.GetComponent<DroppedWord>().Initialize(s);
@@ -20,6 +19,10 @@ public class WordHolder : MonoBehaviour
     }
 
     public void Delete()
+    {
+        Invoke("Destroy", 1f);
+    }
+    private void Destroy()
     {
         Destroy(gameObject);
     }
