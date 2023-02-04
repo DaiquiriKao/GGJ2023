@@ -35,7 +35,7 @@ public class Bag : MonoBehaviour
             if (icon != null)
             {
                 fields[words.Count].icon.sprite = icon;
-                fields[words.Count].icon.color = new Color(0f, 0f, 0f, 1f);
+                fields[words.Count].icon.color = new Color(1f, 1f, 1f, 1f);
                 fields[words.Count].word.text = "";
             }
             else
@@ -70,7 +70,7 @@ public class Bag : MonoBehaviour
             fields[i].word.text = fields[i + 1].word.text;
         }
         fields[words.Count].icon.sprite = null;
-        fields[words.Count].icon.color = new Color(0f, 0f, 0f, 0f);
+        fields[words.Count].icon.color = new Color(1f, 1f, 1f, 0f);
         fields[words.Count].word.text = "";
     }
     private void DropWord(string s)
