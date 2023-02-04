@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -7,10 +9,12 @@ using UnityEngine.UIElements;
 
 public class BagDrag : MonoBehaviour
 {
+    public float DragItemEndDistance = 10.0f;
+    public Transform[] BagItems;
 
     void Start()
     {
-        
+        BagItems = GetComponentsInChildren<Transform>().Where(x => x.gameObject.name.Length > 6 && x.gameObject.name.Substring(0, 7) == "BagItem").ToArray();
     }
 
     void Update()
@@ -18,6 +22,7 @@ public class BagDrag : MonoBehaviour
         ItemDrag();
     }
 
+    private GameObject mouseClickObject = null;
     private void ItemDrag()
     {
         if (Input.GetMouseButton(0))
@@ -30,13 +35,25 @@ public class BagDrag : MonoBehaviour
 
             Vector2 rayPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if (raycastResults.Count > 0 && raycastResults[0].gameObject.tag == "EditorOnly")
+            if (raycastResults.Count > 0 && raycastResults[0].gameObject.tag == "Item")
             {
-                Debug.Log(Input.mousePosition);
                 raycastResults[0].gameObject.transform.position = rayPos;
+                mouseClickObject = raycastResults[0].gameObject;
             }
-
-
         }
+        else if (mouseClickObject != null)
+        {
+            foreach (Transform bagItem in BagItems)
+            {
+                Vector2 rayPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                if (Vector2.Distance(bagItem.position, mouseClickObject.transform.position) < DragItemEndDistance)
+                {
+                    mouseClickObject.transform.position = bagItem.position;
+                    mouseClickObject = null;
+                    break;
+                }
+            }
+        }
+
     }
 }
