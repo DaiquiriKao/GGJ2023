@@ -8,6 +8,7 @@ public class Split : MonoBehaviour
     public Select Selection;
     public Transform DroppedCanvas;
     public Animator m_PlayerAttack;
+    public GameObject Explosion;
 
     private void Update()
     {
@@ -27,6 +28,9 @@ public class Split : MonoBehaviour
             return;
         m_PlayerAttack.SetTrigger("Attack");
         WordHolder wh = Selection.CurrentObject.GetComponent<WordHolder>();
+        GameObject explode = GameObject.Instantiate(Explosion, Selection.CurrentObject.transform);
+        explode.transform.localPosition = Vector3.zero;
+        explode.transform.parent = explode.transform.parent.parent;
         SplitWord(wh);
     }
     public void SplitWord(WordHolder word)
