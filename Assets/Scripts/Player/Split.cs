@@ -41,7 +41,7 @@ public class Split : MonoBehaviour
         m_animator.SetTrigger("Split");
         foreach (string s in word.word.DerivedWords)
         {
-            if (!PlayerBag.AddWord(s))
+            //if (!PlayerBag.AddWord(s))
                 word.DropWord(s, DroppedCanvas);
         }
         word.isSplited = true;
