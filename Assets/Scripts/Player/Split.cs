@@ -20,7 +20,6 @@ public class Split : MonoBehaviour
     {
         if (Vector2.Distance(Selection.CurrentObject.transform.position, transform.position) > 2f)
         {
-            Debug.Log(Selection.CurrentObject.transform.position + " " + transform.position);
             Debug.Log("outrange : " + Vector2.Distance(Selection.CurrentObject.transform.position, transform.position));
             return;
         }
