@@ -1241,6 +1241,7 @@ MonoBehaviour:
   PlayerBag: {fileID: 1173457875}
   Selection: {fileID: 1573924566}
   DroppedCanvas: {fileID: 1992614384}
+  m_PlayerAttack: {fileID: 0}
 --- !u!224 &1573924569
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1279,6 +1280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 1.2
   pm: {fileID: 1756414029}
+  m_PlayerAnimator: {fileID: 0}
 --- !u!61 &1573924571
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1375,6 +1377,7 @@ MonoBehaviour:
   status: {fileID: 1513247019}
   Force: 1.2
   pm: {fileID: 1756414029}
+  m_playerAnimation: {fileID: 0}
 --- !u!1 &1756414027
 GameObject:
   m_ObjectHideFlags: 0
