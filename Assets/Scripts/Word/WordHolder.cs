@@ -10,7 +10,6 @@ public class WordHolder : MonoBehaviour
     public bool isSplited = false;
     private Animator m_animator;
     
-
     public void DropWord(string s, Transform droppedCanvas)
     {
         

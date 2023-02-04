@@ -7,6 +7,8 @@ public class Split : MonoBehaviour
     public Bag PlayerBag;
     public Select Selection;
     public Transform DroppedCanvas;
+    public Animator m_PlayerAttack;
+    public GameObject Explosion;
 
     private void Update()
     {
@@ -24,7 +26,11 @@ public class Split : MonoBehaviour
         }
         if (Selection.CurrentObject.GetComponent<WordHolder>() == null)
             return;
+        m_PlayerAttack.SetTrigger("Attack");
         WordHolder wh = Selection.CurrentObject.GetComponent<WordHolder>();
+        GameObject explode = GameObject.Instantiate(Explosion, Selection.CurrentObject.transform);
+        explode.transform.localPosition = Vector3.zero;
+        explode.transform.parent = explode.transform.parent.parent;
         SplitWord(wh);
     }
     public void SplitWord(WordHolder word)
@@ -35,7 +41,7 @@ public class Split : MonoBehaviour
         m_animator.SetTrigger("Split");
         foreach (string s in word.word.DerivedWords)
         {
-            if (!PlayerBag.AddWord(s))
+            //if (!PlayerBag.AddWord(s))
                 word.DropWord(s, DroppedCanvas);
         }
         word.isSplited = true;

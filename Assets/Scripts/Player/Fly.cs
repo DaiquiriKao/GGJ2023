@@ -11,6 +11,8 @@ public class Fly : MonoBehaviour
     public PlayerInput pm;
     private InputAction m_Fly;
     private Rigidbody2D m_rb;
+    public Animator m_playerAnimation;
+
     private void OnEnable()
     {
         status.CurrentSatus |= Status.status.Flyable;
@@ -20,7 +22,10 @@ public class Fly : MonoBehaviour
     public void Update()
     {
         if (m_Fly.triggered && (status.CurrentSatus & Status.status.Flyable) != 0)
-            m_rb.AddForce(Force * 10 * new Vector2(0, 1f));
+        {
+            m_playerAnimation.SetTrigger("Jump");
+            m_rb.AddForce(Force * 200 * new Vector2(0, 1f));
+        }
             
     }
     private void OnDisable()
