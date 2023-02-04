@@ -8,15 +8,13 @@ public class DroppedWord : MonoBehaviour
     public string partWord;
     public TextMeshProUGUI tmp;
     private Rigidbody2D rb;
-    private void OnEnable()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+
     public void Initialize(string s)
     {
         partWord = s;
         this.gameObject.name = partWord;
         tmp.text = partWord;
+        rb = GetComponent<Rigidbody2D>();
         rb.AddForce(3f * new Vector2(Random.Range(-0.4f, 0.4f), Random.Range(0.1f, 0.5f)));
     }
     public void Destroy()
