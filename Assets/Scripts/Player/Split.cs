@@ -7,6 +7,7 @@ public class Split : MonoBehaviour
     public Bag PlayerBag;
     public Select Selection;
     public Transform DroppedCanvas;
+    public Animator m_PlayerAttack;
 
     private void Update()
     {
@@ -24,6 +25,7 @@ public class Split : MonoBehaviour
         }
         if (Selection.CurrentObject.GetComponent<WordHolder>() == null)
             return;
+        m_PlayerAttack.SetTrigger("Attack");
         WordHolder wh = Selection.CurrentObject.GetComponent<WordHolder>();
         SplitWord(wh);
     }
