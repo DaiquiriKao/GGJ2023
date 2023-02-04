@@ -31,6 +31,8 @@ public class Split : MonoBehaviour
     {
         if (word.isSplited)
             return;
+        Animator m_animator = word.gameObject.GetComponent<Animator>();
+        m_animator.SetTrigger("Split");
         foreach (string s in word.word.DerivedWords)
         {
             if (!PlayerBag.AddWord(s))
