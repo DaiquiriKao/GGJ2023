@@ -24,7 +24,7 @@ public class Fly : MonoBehaviour
         if (m_Fly.triggered && (status.CurrentSatus & Status.status.Flyable) != 0)
         {
             m_playerAnimation.SetTrigger("Jump");
-            m_rb.AddForce(Force * 10 * new Vector2(0, 1f));
+            m_rb.AddForce(Force * 200 * new Vector2(0, 1f));
         }
             
     }
