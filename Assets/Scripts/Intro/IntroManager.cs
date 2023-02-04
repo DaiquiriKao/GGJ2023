@@ -1,10 +1,14 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering.Universal;
 
 public class IntroManager : MonoBehaviour
 {
     [SerializeField] private float introSceneAnimTime;
+    [SerializeField] private float onSinkTime;
+    [SerializeField] private Color secondColor;
+    [SerializeField] private Light2D globalLight;
     [SerializeField] private GameObject title;
     [SerializeField] private float titleAnimTime;
     [SerializeField] private Button startBtn;
@@ -21,17 +25,32 @@ public class IntroManager : MonoBehaviour
 
     private IEnumerator ShowIntroAnim()
     {
-        yield return new WaitForSeconds(introSceneAnimTime);
+        yield return new WaitForSeconds(onSinkTime);
+        var num = 0f;
+        var previousColor = globalLight.color;
+        var remainTime = (introSceneAnimTime - onSinkTime);
+        while(num < 1f)
+        {
+            num += 0.02f;
+            var color = Color.Lerp(previousColor, secondColor, num);
+            Debug.Log(color);
+            globalLight.color = color;
+            yield return null;
+            Debug.Log(num);
+        }
+        yield return new WaitForSeconds(remainTime);
+        globalLight.color = secondColor;
+        
         title.SetActive(true);
         yield return new WaitForSeconds(titleAnimTime);
         startBtn.interactable = true;
+        quitBtn.interactable = true;
     }
 
     public void OnClickStartButton()
     {
         if (!isClicked)
         {
-            //TODO: Move To Game Scene
             Debug.Log("Enter Game Scene");
         }
     }
