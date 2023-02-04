@@ -11,8 +11,12 @@ using UnityEngine.UIElements;
 public class BagDrag : MonoBehaviour
 {
     public float DragItemEndDistance = 1.0f;
-    private GameObject[] items;
+    public string BagItemName = "BagItem";
+    public string WordItemTag = "Item";
+    public GameObject BagList;
+    private GameObject mouseClickObject = null;
     private Transform[] BagItems;
+    private Vector2? DragWordPostion;
     private Merge merge;
     private Bag bag;
 
@@ -20,7 +24,8 @@ public class BagDrag : MonoBehaviour
     {
         merge = FindObjectOfType<Merge>();
         bag = GetComponent<Bag>();
-        BagItems = GetComponentsInChildren<Transform>().Where(x => x.gameObject.name.Length > 6 && x.gameObject.name.Substring(0, 7) == "BagItem").ToArray();
+        BagItems = BagList.GetComponentsInChildren<Transform>()
+            .Where(x => x.gameObject.name.Length > 6 && x.gameObject.name.Substring(0, 7) == BagItemName).ToArray();
     }
 
     void Update()
@@ -28,7 +33,6 @@ public class BagDrag : MonoBehaviour
         ItemDrag();
     }
 
-    private GameObject mouseClickObject = null;
     private void ItemDrag()
     {
         if (Input.GetMouseButton(0))
@@ -47,54 +51,77 @@ public class BagDrag : MonoBehaviour
                 List<RaycastResult> raycastResults = new List<RaycastResult>();
                 EventSystem.current.RaycastAll(pointer, raycastResults);
 
-                if (raycastResults.Count > 0 && raycastResults[0].gameObject.tag == "Item")
+                if (raycastResults.Count > 0 && raycastResults[0].gameObject.tag == WordItemTag)
                 {
                     raycastResults[0].gameObject.transform.position = rayPos;
+
+                    //暫存物體
                     mouseClickObject = raycastResults[0].gameObject;
-                    //bag.AddWord("");
+                    DragWordPostion = raycastResults[0].gameObject.transform.position;
+
+                    bag.RemoveWord(raycastResults[0].gameObject.GetComponent<TMP_Text>().text);
                 }
             }
         }
         else if (mouseClickObject != null)
         {
+
             foreach (Transform bagItem in BagItems)
             {
                 Vector2 rayPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 if (Vector2.Distance(bagItem.position, mouseClickObject.transform.position) < DragItemEndDistance)
                 {
                     mouseClickObject.transform.position = bagItem.position;
+                    bag.AddWord(mouseClickObject.GetComponent<TMP_Text>().text);
+
                     //若物體能合併則合併並刪除物件
-                    mergeItem(mouseClickObject);
-                    mouseClickObject = null;
-                    break;
+                    DragWordPostion = DragItemMerge(mouseClickObject);
+                    if (DragWordPostion == null)
+                    {
+                        mouseClickObject = null;
+                        return;
+                    }
                 }
             }
+            //復原放置前的位置
+            mouseClickObject.transform.position = (Vector2)DragWordPostion;
+            bag.AddWord(mouseClickObject.GetComponent<TMP_Text>().text);
+
+            //放開暫持物體
+            mouseClickObject = null;
         }
     }
 
-    private void mergeItem(GameObject mouseClickObject)
+    private Vector2? DragItemMerge(GameObject mouseClickObject)
     {
-        if (mouseClickObject == null)
-            return;
-
-        items = GameObject.FindGameObjectsWithTag("Item");
+        Vector2 tempVector2 = mouseClickObject.transform.position;
+        GameObject[] items = GameObject.FindGameObjectsWithTag(WordItemTag);
         foreach (GameObject item in items)
         {
             if (item.name == mouseClickObject.name
                 || Vector2.Distance(item.transform.position, mouseClickObject.transform.position) > DragItemEndDistance)
                 continue;
 
-            TMP_Text tragText = item.GetComponent<TMP_Text>();
-            TMP_Text thisText = mouseClickObject.GetComponent<TMP_Text>();
+            string tragText = item.GetComponent<TMP_Text>().text;
+            string thisText = mouseClickObject.GetComponent<TMP_Text>().text;
 
+            tempVector2 = (Vector2)DragWordPostion;
 
+            //判斷可否合併
+            Debug.Log(tragText + thisText);
+            if (!merge.MergeWords(tragText, thisText))
+                continue;
 
-            //todo : 判斷可否合併
-            item.GetComponent<TMP_Text>().text = tragText.text + thisText.text;
+            bag.RemoveWord(tragText);
+            bag.RemoveWord(thisText);
+            bag.AddWord(tragText + thisText);
+
+            item.GetComponent<TMP_Text>().text = tragText + thisText;
 
             Destroy(mouseClickObject);
-            return;
+            return null;
         }
+        return tempVector2;
     }
 
 }

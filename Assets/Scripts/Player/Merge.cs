@@ -14,7 +14,8 @@ public class MergableWord{
 public class Merge : MonoBehaviour
 {
     public Bag Words;
-    public List<MergableWord> MergeList = new List<MergableWord>();
+    public List<MergableWord>MergeList = new List<MergableWord>();
+
     public Sprite isAvaliableWord(string s)
     {
         bool isFound = false;
@@ -32,7 +33,8 @@ public class Merge : MonoBehaviour
             return null;
         return temp;
     }
-    public void MergeWords(string a, string b)
+
+    public bool MergeWords(string a, string b)
     {
         string final = a + b;
         bool isFound = false;
@@ -49,10 +51,8 @@ public class Merge : MonoBehaviour
         if (!isFound)
         {
             Debug.Log("Fail!");
-            return;
         }
-        Words.RemoveWord(a);
-        Words.RemoveWord(b);
+        return isFound;
     }
     private void Update()
     {
