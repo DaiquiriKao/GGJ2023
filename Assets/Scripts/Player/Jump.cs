@@ -14,6 +14,8 @@ public class Jump : MonoBehaviour
     private Rigidbody2D m_rb;
     public Animator m_playerAnimation;
     public LayerMask Gound;
+    public AudioSource AudioSound;
+    public AudioClip AudioSource;
     private int jumpTimes = 0;
 
     private void OnEnable()
@@ -27,7 +29,14 @@ public class Jump : MonoBehaviour
         if (m_Fly.triggered && (status.CurrentSatus & Status.status.Flyable) != 0 && (isGrounded() || jumpTimes == 1))
         {
             m_playerAnimation.SetTrigger("Jump");
-            if(jumpTimes == 1)
+
+            if (AudioSound != null && AudioSource != null)
+            {
+                AudioSound.clip = AudioSource;
+                AudioSound.Play();
+            }
+
+            if (jumpTimes == 1)
                 m_rb.AddForce(Force * 200 * new Vector2(0, 1f));
             else
                 m_rb.AddForce(Force * 200 * new Vector2(0, 1f));

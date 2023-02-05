@@ -8,7 +8,8 @@ public class Hurt : MonoBehaviour
     [SerializeField]
     public bool HurtForce = true;
     public Image Image;
-    public AudioSource HurtSound;
+    public AudioSource AudioSound;
+    public AudioClip AudioSource;
     public string DamgeObjectName = "DamgeObject";
     public float Damge = 1.0f;
     public float Power = 200.0f;
@@ -40,8 +41,11 @@ public class Hurt : MonoBehaviour
 
                 rigidbody2.AddForce(new Vector2(vector, 1) * Power);
 
-                if (HurtSound != null)
-                    HurtSound.Play();
+                if (AudioSound != null && AudioSource != null)
+                {
+                    AudioSound.clip = AudioSource;
+                    AudioSound.Play();
+                }
 
                 StartCoroutine(FlashRed(Image, 3));
             }
