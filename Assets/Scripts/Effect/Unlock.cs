@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class Unlock : MonoBehaviour
 {
-    private Animator m_Animator;
     private void OnEnable()
     {
         if (GameObject.Find("Door") != null)
-            m_Animator = GameObject.Find("Door").GetComponent<Animator>();
-        OnTriggerEvent();
-    }
-    public void OnTriggerEvent()
-    {
-        m_Animator.SetTrigger("Event");
+            GameObject.Find("Door").GetComponent<Door>().Open();
     }
 }
