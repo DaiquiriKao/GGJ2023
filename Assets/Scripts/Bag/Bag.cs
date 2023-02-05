@@ -29,6 +29,7 @@ public class Bag : MonoBehaviour
     }
     public void MergeWord(int a, int b)
     {
+        Debug.Log(a+ " " + b);
         string str1 = words[a];
         string str2 = words[b];
         RemoveWord(str1);
@@ -50,11 +51,27 @@ public class Bag : MonoBehaviour
             {
                 fields[words.Count].word.text = s;
             }
+            fields[words.Count].icon.GetComponent<MouseDrag>().CanDrag = true;
             words.Add(s);
             return true;
         }
         else
             return false;
+    }
+    public void RemoveIndex(int index)
+    {
+        words.RemoveAt(index);
+
+        for (int i = index; i <= words.Count; i++)
+        {
+            fields[i].icon.sprite = fields[i + 1].icon.sprite;
+            fields[i].icon.color = fields[i + 1].icon.color;
+            fields[i].word.text = fields[i + 1].word.text;
+        }
+        fields[words.Count].icon.GetComponent<MouseDrag>().CanDrag = true;
+        fields[words.Count].icon.sprite = null;
+        fields[words.Count].icon.color = new Color(1f, 1f, 1f, 0f);
+        fields[words.Count].word.text = "";
     }
     public void RemoveWord(string s)
     {
@@ -72,11 +89,12 @@ public class Bag : MonoBehaviour
 
         words.RemoveAt(index);
 
-        for (int i = index; i < words.Count; i++) {
+        for (int i = index; i <= words.Count; i++) {
             fields[i].icon.sprite = fields[i+1].icon.sprite;
             fields[i].icon.color = fields[i+1].icon.color;
             fields[i].word.text = fields[i + 1].word.text;
         }
+        fields[words.Count].icon.GetComponent<MouseDrag>().CanDrag = true;
         fields[words.Count].icon.sprite = null;
         fields[words.Count].icon.color = new Color(1f, 1f, 1f, 0f);
         fields[words.Count].word.text = "";
