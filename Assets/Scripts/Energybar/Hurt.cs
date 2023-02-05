@@ -8,6 +8,7 @@ public class Hurt : MonoBehaviour
     [SerializeField]
     public bool HurtForce = true;
     public Image Image;
+    public AudioSource HurtSound;
     public string DamgeObjectName = "DamgeObject";
     public float Damge = 1.0f;
     public float Power = 200.0f;
@@ -38,6 +39,9 @@ public class Hurt : MonoBehaviour
                     / Mathf.Abs(gameObject.transform.position.x - collision.transform.position.x);
 
                 rigidbody2.AddForce(new Vector2(vector, 1) * Power);
+
+                if (HurtSound != null)
+                    HurtSound.Play();
 
                 StartCoroutine(FlashRed(Image, 3));
             }
