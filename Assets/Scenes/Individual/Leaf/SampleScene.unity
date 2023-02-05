@@ -215,6 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560bdef5ea628484cba1157cd43fea33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 0
   select: {fileID: 1573924566}
   EnvironmentMask:
     serializedVersion: 2
@@ -362,6 +363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560bdef5ea628484cba1157cd43fea33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 0
   select: {fileID: 1573924566}
   EnvironmentMask:
     serializedVersion: 2
@@ -509,6 +511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560bdef5ea628484cba1157cd43fea33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 0
   select: {fileID: 1573924566}
   EnvironmentMask:
     serializedVersion: 2
@@ -1945,6 +1948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560bdef5ea628484cba1157cd43fea33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 0
   select: {fileID: 1573924566}
   EnvironmentMask:
     serializedVersion: 2
@@ -2227,6 +2231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560bdef5ea628484cba1157cd43fea33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 0
   select: {fileID: 1573924566}
   EnvironmentMask:
     serializedVersion: 2
@@ -4014,6 +4019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560bdef5ea628484cba1157cd43fea33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 0
   select: {fileID: 1573924566}
   EnvironmentMask:
     serializedVersion: 2
@@ -4127,7 +4133,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: dd
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5ce736ce724c3c449b567f5cbe35fdc2, type: 2}
   m_sharedMaterial: {fileID: -50494194382171391, guid: 5ce736ce724c3c449b567f5cbe35fdc2, type: 2}
@@ -4611,6 +4617,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560bdef5ea628484cba1157cd43fea33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 0
   select: {fileID: 1573924566}
   EnvironmentMask:
     serializedVersion: 2
@@ -5199,6 +5206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560bdef5ea628484cba1157cd43fea33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 0
   select: {fileID: 1573924566}
   EnvironmentMask:
     serializedVersion: 2
@@ -5346,6 +5354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560bdef5ea628484cba1157cd43fea33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 0
   select: {fileID: 1573924566}
   EnvironmentMask:
     serializedVersion: 2
@@ -5540,6 +5549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560bdef5ea628484cba1157cd43fea33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 0
   select: {fileID: 1573924566}
   EnvironmentMask:
     serializedVersion: 2
@@ -5825,6 +5835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560bdef5ea628484cba1157cd43fea33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 0
   select: {fileID: 1573924566}
   EnvironmentMask:
     serializedVersion: 2
@@ -6483,6 +6494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560bdef5ea628484cba1157cd43fea33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 0
   select: {fileID: 1573924566}
   EnvironmentMask:
     serializedVersion: 2
@@ -6630,6 +6642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560bdef5ea628484cba1157cd43fea33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 0
   select: {fileID: 1573924566}
   EnvironmentMask:
     serializedVersion: 2
@@ -7083,6 +7096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560bdef5ea628484cba1157cd43fea33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CanDrag: 0
   select: {fileID: 1573924566}
   EnvironmentMask:
     serializedVersion: 2

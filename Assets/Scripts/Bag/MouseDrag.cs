@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MouseDrag : MonoBehaviour
 {
+    public bool CanDrag = false;
     public Select select;
     private bool hasTaken = false;
     private Vector3 originPosition;
@@ -22,31 +24,41 @@ public class MouseDrag : MonoBehaviour
             Drag();
         else if(hasTaken && Input.GetMouseButtonUp(0))
         {
-            if(index != -1) // inside
+            if (index != -1) // inside
             {
-                int minCheck = Mathf.Clamp(index - 1, 0, Inventory.childCount);
-                int maxCheck = Mathf.Clamp(index + 1, 0, Inventory.childCount);
+                int minCheck = Mathf.Clamp(index - 2, 0, bag.words.Count - 1);
+                int maxCheck = Mathf.Clamp(index + 2, 0, bag.words.Count - 1);
+                Debug.Log(minCheck+ " " + maxCheck);
                 float f = Mathf.Infinity;
-                int minIndex = index;
-                for(int i = minCheck; i <= maxCheck;i++)
+                int minIndex = minCheck;
+                if (minCheck <= index && index <= maxCheck)
                 {
-                    if(f < Mathf.Abs(Inventory.GetChild(i).transform.position.x - transform.position.x))
+                    for (int i = minCheck; i <= maxCheck; i++)
                     {
-                        f = Mathf.Abs(Inventory.GetChild(i).transform.position.x - transform.position.x);
-                        minIndex = i;
+                        if (f < Mathf.Abs(Inventory.GetChild(i).transform.position.x - transform.position.x))
+                        {
+                            f = Mathf.Abs(Inventory.GetChild(i).transform.position.x - transform.position.x);
+                            minIndex = i;
+                        }
                     }
+                    bag.MergeWord(minIndex, int.Parse(gameObject.name));
                 }
-                bag.MergeWord(minIndex, int.Parse(gameObject.name));
             }
-            Collider2D temp = Physics2D.OverlapBox(transform.position, new Vector2(1f, 1f), 0f, EnvironmentMask);
-            if (temp == null)// outside and not collide with environment
-                GameObject.Instantiate(DroppedWord, transform.position, Quaternion.identity, Canvas);
+            else
+            {
+                Collider2D temp = Physics2D.OverlapBox(transform.position, new Vector2(1f, 1f), 0f, EnvironmentMask);
+                if (temp == null) // outside and not collide with environment
+                {
+                    GameObject.Instantiate(DroppedWord, transform.position, Quaternion.identity, Canvas);
+                    bag.RemoveIndex(int.Parse(gameObject.name));
+                }
+            }
             transform.position = originPosition;
         }
     }
     private void Drag()
     {
-        if (bag.words.Count <= int.Parse(gameObject.name))
+        if (!CanDrag)
             return;
         if(!hasTaken)
         {
