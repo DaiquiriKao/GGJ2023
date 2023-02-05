@@ -28,7 +28,7 @@ public class Jump : MonoBehaviour
         {
             m_playerAnimation.SetTrigger("Jump");
             if(jumpTimes == 1)
-                m_rb.AddForce(Force * 320 * new Vector2(0, 1f));
+                m_rb.AddForce(Force * 200 * new Vector2(0, 1f));
             else
                 m_rb.AddForce(Force * 200 * new Vector2(0, 1f));
             jumpTimes++;

@@ -23,8 +23,10 @@ public class EnergyBar : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.P))
             ChargeEnergy(1);
+        if (Input.GetKeyDown(KeyCode.O))
+            LostEnergy(1);
     }
     public void UpdateEnergy()
     {
