@@ -39,7 +39,6 @@ public class Climb : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log(collision.name + " " + OnLadder + " " + m_Climp.ReadValue<float>());
         if (collision.name != LadderName || OnLadder || m_Climp.ReadValue<float>() == 0)
             return;
 

@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4857872723718645598}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -80, z: 0}
   m_LocalScale: {x: 108, y: 108, z: 108}
   m_ConstrainProportionsScale: 0
@@ -52,6 +52,7 @@ MonoBehaviour:
   balloonTrigger: {fileID: 4857872724866041639}
   rigidBody: {fileID: 4857872723718645593}
   speed: 0.02
+  floatingSpeed: 0.07
   isControllable: 0
 --- !u!50 &4857872723718645593
 Rigidbody2D:
@@ -68,7 +69,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: -0.07
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

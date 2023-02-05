@@ -6,8 +6,8 @@ public class Door : MonoBehaviour
 {
     [SerializeField] private Animator anim;
     [SerializeField] private float doorOpenTime;
-    [SerializeField] private Collider2D collider;
 
+    [ContextMenu("Test Open")]
     public void Open()
     {
         StartCoroutine(OpenDoor());
@@ -22,6 +22,6 @@ public class Door : MonoBehaviour
 
     public void OnOpened()
     {
-        collider.enabled = false;
+        gameObject.SetActive(false);
     }
 }
