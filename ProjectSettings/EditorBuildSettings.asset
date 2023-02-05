@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Individual/Leaf/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/GameScene/Outro.unity
+    guid: 0310597ebd5d544438d996aab8e2e340
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: f77c0133e2a3bf6498e7749e63a7432a, type: 2}

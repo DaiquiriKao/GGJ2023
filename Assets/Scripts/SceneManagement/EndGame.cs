@@ -7,7 +7,7 @@ public class EndGame : MonoBehaviour
     public SceneSwitcher SceneManager;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Balloon")
+        if (collision.gameObject.name == "Balloon_worm")
             SceneManager.ChangeScene();
     }
 }

@@ -832,6 +832,7 @@ GameObject:
   - component: {fileID: 196395046}
   - component: {fileID: 196395048}
   - component: {fileID: 196395049}
+  - component: {fileID: 196395050}
   m_Layer: 5
   m_Name: Level End
   m_TagString: Untagged
@@ -856,7 +857,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 284, y: 5310}
+  m_AnchoredPosition: {x: 208, y: 4997}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &196395048
@@ -898,6 +899,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneManager: {fileID: 1667309834}
+--- !u!50 &196395050
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196395045}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &208253576
 GameObject:
   m_ObjectHideFlags: 0
@@ -7681,7 +7703,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7febdf95773724a85350ecd5b4df6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: End
+  SceneName: Outro
   OnChangeScene:
     m_PersistentCalls:
       m_Calls: []
