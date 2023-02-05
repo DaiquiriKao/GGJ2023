@@ -31,7 +31,7 @@ public class DroppedWord : MonoBehaviour
         this.gameObject.name = partWord;
         tmp.text = partWord;
         rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(3f * new Vector2(Random.Range(-0.4f, 0.4f), Random.Range(0.5f, 0.8f)));
+        rb.AddForce(8f * new Vector2(Random.Range(-0.5f, 0.5f), Random.Range(0.2f, 0.4f)));
         if (GameObject.Find("Bag").GetComponent<Bag>().AddWord(partWord))
             StartCoroutine(PlayerGain());
     }

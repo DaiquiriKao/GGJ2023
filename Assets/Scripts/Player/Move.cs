@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Move : MonoBehaviour
 {
-    public float Speed = 1.2f;
+    public float Speed = 1.5f;
     public PlayerInput pm;
     private InputAction m_Move;
     public Animator m_PlayerAnimator;

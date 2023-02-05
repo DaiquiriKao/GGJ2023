@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
-public class MergableWord {
+public class MergableWord{
     public string word;
+    public Sprite image; 
     [SerializeField]
     public Effect effect;
 }
@@ -14,13 +16,31 @@ public class Merge : MonoBehaviour
     public Bag Words;
     public List<MergableWord>MergeList = new List<MergableWord>();
 
-    public void MergeWords(string a, string b)
+    public Sprite isAvaliableWord(string s)
+    {
+        bool isFound = false;
+        Sprite temp = null;
+        foreach (MergableWord mw in MergeList)
+        {
+            if (mw.word == s)
+            {
+                isFound = true;
+                temp = mw.image;
+                break;
+            }
+        }
+        if (!isFound)
+            return null;
+        return temp;
+    }
+
+    public bool MergeWords(string a, string b)
     {
         string final = a + b;
         bool isFound = false;
-        foreach(MergableWord mw in MergeList)
+        foreach (MergableWord mw in MergeList)
         {
-            if(mw.word == final)
+            if (mw.word == final)
             {
                 Debug.Log("Find word");
                 mw.effect.Execution();
@@ -28,13 +48,11 @@ public class Merge : MonoBehaviour
                 break;
             }
         }
-        if(!isFound)
+        if (!isFound)
         {
             Debug.Log("Fail!");
-            return;
         }
-        Words.RemoveWord(a);
-        Words.RemoveWord(b);
+        return isFound;
     }
     private void Update()
     {
