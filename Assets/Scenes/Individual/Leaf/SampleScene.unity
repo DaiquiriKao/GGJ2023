@@ -4509,7 +4509,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db02de03e0008b54aafccb3d317d7a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1.6
+  Speed: 5
   pm: {fileID: 1756414029}
   m_PlayerAnimator: {fileID: 2050536358530389752}
 --- !u!61 &1573924571

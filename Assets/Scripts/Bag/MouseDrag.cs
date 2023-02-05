@@ -60,7 +60,8 @@ public class MouseDrag : MonoBehaviour
                     }
                     else
                     {
-                        GameObject drop = Resources.Load<GameObject>(PrefabLocation + bag.words[int.Parse(gameObject.name)]);
+                        var load = Resources.Load(PrefabLocation + bag.words[int.Parse(gameObject.name)]/*+".prefab"*/) as GameObject;
+                        GameObject drop = GameObject.Instantiate(load, transform.position, Quaternion.identity, Canvas);
                         bag.RemoveIndex(int.Parse(gameObject.name));
                     }
                 }
