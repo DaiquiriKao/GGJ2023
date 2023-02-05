@@ -4624,6 +4624,7 @@ GameObject:
   - component: {fileID: 1573924571}
   - component: {fileID: 1573924572}
   - component: {fileID: 1573924574}
+  - component: {fileID: 1573924575}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4930,6 +4931,24 @@ MonoBehaviour:
   Gound:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &1573924575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573924565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5334c0f1cd6fdcd49ae91ca1a4e5c5fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LadderName: ladder
+  ClimbSpeed: 1.2
+  status: {fileID: 1513247019}
+  jump: {fileID: 1573924574}
+  m_playerAnimation: {fileID: 2050536358530389752}
+  pm: {fileID: 1756414029}
 --- !u!1 &1631233369
 GameObject:
   m_ObjectHideFlags: 0
