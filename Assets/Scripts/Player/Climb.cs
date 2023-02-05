@@ -12,6 +12,8 @@ public class Climb : MonoBehaviour
     public Jump jump;
     public Animator m_playerAnimation;
     public PlayerInput pm;
+    public AudioSource AudioSound;
+    public AudioClip AudioSource;
 
     private InputAction m_Climp;
 
@@ -33,6 +35,12 @@ public class Climb : MonoBehaviour
     {
         if (OnLadder && m_Climp.ReadValue<float>() != 0)
         {
+            if (AudioSound != null && AudioSource != null)
+            {
+                AudioSound.clip = AudioSource;
+                AudioSound.Play();
+            }
+
             transform.position += new Vector3(0, m_Climp.ReadValue<float>() * ClimbSpeed * Time.deltaTime, 0);
         }
     }
