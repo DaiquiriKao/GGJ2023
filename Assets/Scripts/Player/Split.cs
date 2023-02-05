@@ -9,13 +9,15 @@ public class Split : MonoBehaviour
     public Transform DroppedCanvas;
     public Animator m_PlayerAttack;
     public GameObject Explosion;
+    public AudioSource AudioSound;
+    public AudioClip AudioSource;
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0) && Selection.CurrentObject != null)
             Click();
     }
-    
+
     public void Click()
     {
         if (Vector2.Distance(Selection.CurrentObject.transform.position, transform.position) > 2f)
@@ -26,6 +28,13 @@ public class Split : MonoBehaviour
         if (Selection.CurrentObject.GetComponent<WordHolder>() == null)
             return;
         m_PlayerAttack.SetTrigger("Attack");
+
+        if (AudioSound != null && AudioSource != null)
+        {
+            AudioSound.clip = AudioSource;
+            AudioSound.Play();
+        }
+
         WordHolder wh = Selection.CurrentObject.GetComponent<WordHolder>();
         GameObject explode = GameObject.Instantiate(Explosion, Selection.CurrentObject.transform);
         explode.transform.localPosition = Vector3.zero;

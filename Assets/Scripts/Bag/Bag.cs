@@ -104,7 +104,7 @@ public class Bag : MonoBehaviour
 
         words.RemoveAt(index);
 
-        for (int i = index; i <= words.Count; i++) {
+        for (int i = index; i < words.Count; i++) {
             fields[i].icon.sprite = fields[i+1].icon.sprite;
             fields[i].icon.color = fields[i+1].icon.color;
             fields[i].word.text = fields[i + 1].word.text;
