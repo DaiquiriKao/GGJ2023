@@ -574,13 +574,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1144692012}
     m_Modifications:
-    - target: {fileID: 1756058627798569670, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 2916216573149948988, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
-      propertyPath: m_Layer
-      value: 9
+      propertyPath: m_TagString
+      value: DamgeObject
       objectReference: {fileID: 0}
     - target: {fileID: 3634917413687258237, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
       propertyPath: m_RootOrder
@@ -626,25 +622,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4794211092119142334, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 4794211092119142334, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7662145636261590409, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
       propertyPath: m_Name
       value: Grid
-      objectReference: {fileID: 0}
-    - target: {fileID: 7662145636261590409, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
-      propertyPath: m_Layer
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8298510503188896711, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
-      propertyPath: m_Layer
-      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
@@ -4625,6 +4605,7 @@ GameObject:
   - component: {fileID: 1573924572}
   - component: {fileID: 1573924574}
   - component: {fileID: 1573924575}
+  - component: {fileID: 1573924576}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4949,6 +4930,22 @@ MonoBehaviour:
   jump: {fileID: 1573924574}
   m_playerAnimation: {fileID: 2050536358530389752}
   pm: {fileID: 1756414029}
+--- !u!114 &1573924576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573924565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70852d6a7ee93c14ba7159e7d4d15da6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HurtForce: 1
+  DamgeObjectName: DamgeObject
+  Damge: 1
+  EnergyBar: {fileID: 1710958055}
 --- !u!1 &1631233369
 GameObject:
   m_ObjectHideFlags: 0
