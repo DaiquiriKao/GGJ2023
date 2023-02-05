@@ -17,6 +17,7 @@ public class MouseDrag : MonoBehaviour
     private int index = -1;
 
     public Bag bag;
+    private string PrefabLocation = "AvaliableObject/";
     // Update is called once per frame
     void Update()
     { 
@@ -28,14 +29,16 @@ public class MouseDrag : MonoBehaviour
             {
                 int minCheck = Mathf.Clamp(index - 2, 0, bag.words.Count - 1);
                 int maxCheck = Mathf.Clamp(index + 2, 0, bag.words.Count - 1);
-                Debug.Log(minCheck+ " " + maxCheck);
                 float f = Mathf.Infinity;
                 int minIndex = minCheck;
-                if (minCheck <= index && index <= maxCheck)
+                if (minCheck-1 <= index && index <= maxCheck+1)
                 {
                     for (int i = minCheck; i <= maxCheck; i++)
                     {
-                        if (f < Mathf.Abs(Inventory.GetChild(i).transform.position.x - transform.position.x))
+                        if (i == int.Parse(gameObject.name))
+                            continue;
+                        Debug.Log(Mathf.Abs(Inventory.GetChild(i).transform.position.x - transform.position.x));
+                        if (f > Mathf.Abs(Inventory.GetChild(i).transform.position.x - transform.position.x))
                         {
                             f = Mathf.Abs(Inventory.GetChild(i).transform.position.x - transform.position.x);
                             minIndex = i;
@@ -49,9 +52,18 @@ public class MouseDrag : MonoBehaviour
                 Collider2D temp = Physics2D.OverlapBox(transform.position, new Vector2(1f, 1f), 0f, EnvironmentMask);
                 if (temp == null) // outside and not collide with environment
                 {
-                    GameObject drop = GameObject.Instantiate(DroppedWord, transform.position, Quaternion.identity, Canvas);
-                    drop.GetComponent<DroppedWord>().Initialize(bag.words[int.Parse(gameObject.name)], false);
-                    bag.RemoveIndex(int.Parse(gameObject.name));
+                    if (bag.IconList.isAvaliableWord(bag.words[int.Parse(gameObject.name)])==null)
+                    {
+                        GameObject drop = GameObject.Instantiate(DroppedWord, transform.position, Quaternion.identity, Canvas);
+                        drop.GetComponent<DroppedWord>().Initialize(bag.words[int.Parse(gameObject.name)], false);
+                        bag.RemoveIndex(int.Parse(gameObject.name));
+                    }
+                    else
+                    {
+                        var load = Resources.Load(PrefabLocation + bag.words[int.Parse(gameObject.name)]/*+".prefab"*/) as GameObject;
+                        GameObject drop = GameObject.Instantiate(load, transform.position, Quaternion.identity, Canvas);
+                        bag.RemoveIndex(int.Parse(gameObject.name));
+                    }
                 }
             }
             transform.position = originPosition;
