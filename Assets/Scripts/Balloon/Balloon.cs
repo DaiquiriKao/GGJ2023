@@ -9,6 +9,7 @@ public class Balloon : MonoBehaviour
     [SerializeField] private TriggerCallback balloonTrigger;
     [SerializeField] private Rigidbody2D rigidBody;
     [SerializeField] private float speed;
+    [SerializeField] private float floatingSpeed = -0.07f;
 
     [SerializeField] private bool isControllable;
 
@@ -17,6 +18,7 @@ public class Balloon : MonoBehaviour
         balloon.SetActive(true);
         balloonPlayer.SetActive(false);
         balloonTrigger.SetCallback(OnBalloonTouched);
+        rigidBody.gravityScale = 0;
     }
 
     private void Update()
@@ -35,11 +37,13 @@ public class Balloon : MonoBehaviour
         }
     }
 
+    [ContextMenu("Test Fly")]
     private void Fly()
     {
         balloon.SetActive(false);
         balloonPlayer.SetActive(true);
         isControllable = true;
+        rigidBody.gravityScale = floatingSpeed;
     }
 
     private void WaitInput()
