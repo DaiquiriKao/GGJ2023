@@ -130,18 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1144692012}
     m_Modifications:
-    - target: {fileID: 3320260454199721073, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3320260454199721073, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3320260454199721073, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3634917413687258237, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1149,10 +1137,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxNumber: 3
+  fields: []
   words:
   - fly
   - able
   droppedWord: {fileID: 6338175295552474687, guid: 1764c44b35434a944a33688f2173bebb, type: 3}
+  IconList: {fileID: 0}
 --- !u!1 &1513247017
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,6 +1350,7 @@ MonoBehaviour:
   Words: {fileID: 1173457875}
   MergeList:
   - word: flyable
+    image: {fileID: 0}
     effect:
       PartOfSpeech: 1
       InstantiateObject: {fileID: 0}
@@ -1394,6 +1385,16 @@ MonoBehaviour:
   status: {fileID: 1513247019}
   Force: 1.6
   pm: {fileID: 1756414029}
+  m_Fly:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  m_rb: {fileID: 0}
   m_playerAnimation: {fileID: 2050536358530389752}
 --- !u!1 &1613746328
 GameObject:
