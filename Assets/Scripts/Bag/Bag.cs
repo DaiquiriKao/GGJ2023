@@ -30,11 +30,26 @@ public class Bag : MonoBehaviour
     public void MergeWord(int a, int b)
     {
         Debug.Log(a+ " " + b);
-        string str1 = words[a];
-        string str2 = words[b];
-        RemoveWord(str1);
-        RemoveWord(str2);
-        AddWord(str1 + str2);
+        if (a == b)
+            return;
+        string first = words[a];
+        string second = words[b];
+        string str1 = first + second;
+        string str2 = second + first;
+        if (IconList.isAvaliableWord(str1) != null)
+        {
+            RemoveWord(first);
+            RemoveWord(second);
+            AddWord(str1);
+            return;
+        }
+        else if(IconList.isAvaliableWord(str2) != null)
+        {
+            RemoveWord(first);
+            RemoveWord(second);
+            AddWord(str2);
+            return;
+        }
     }
     public bool AddWord(string s)
     {
