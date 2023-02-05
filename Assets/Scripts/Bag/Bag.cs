@@ -16,7 +16,7 @@ public class Bag : MonoBehaviour
     public int MaxNumber = 14;
     private int currentSize = 0;
     public List<InventoryField> fields = new List<InventoryField>();
-    private List<string> words = new List<string>();
+    public List<string> words = new List<string>();
     public GameObject droppedWord;
     public Merge IconList;
     
@@ -26,6 +26,14 @@ public class Bag : MonoBehaviour
             return true;
         else
             return false;
+    }
+    public void MergeWord(int a, int b)
+    {
+        string str1 = words[a];
+        string str2 = words[b];
+        RemoveWord(str1);
+        RemoveWord(str2);
+        AddWord(str1 + str2);
     }
     public bool AddWord(string s)
     {

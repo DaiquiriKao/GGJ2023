@@ -5423,6 +5423,10 @@ MonoBehaviour:
   EnvironmentMask:
     serializedVersion: 2
     m_Bits: 512
+  DroppedWord: {fileID: 6338175295552474687, guid: 1764c44b35434a944a33688f2173bebb, type: 3}
+  Canvas: {fileID: 558364555}
+  Inventory: {fileID: 903245397}
+  bag: {fileID: 0}
 --- !u!1 &1453746549
 GameObject:
   m_ObjectHideFlags: 0
