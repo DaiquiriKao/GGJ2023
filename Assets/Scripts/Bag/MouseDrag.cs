@@ -49,7 +49,8 @@ public class MouseDrag : MonoBehaviour
                 Collider2D temp = Physics2D.OverlapBox(transform.position, new Vector2(1f, 1f), 0f, EnvironmentMask);
                 if (temp == null) // outside and not collide with environment
                 {
-                    GameObject.Instantiate(DroppedWord, transform.position, Quaternion.identity, Canvas);
+                    GameObject drop = GameObject.Instantiate(DroppedWord, transform.position, Quaternion.identity, Canvas);
+                    drop.GetComponent<DroppedWord>().Initialize(bag.words[int.Parse(gameObject.name)], false);
                     bag.RemoveIndex(int.Parse(gameObject.name));
                 }
             }

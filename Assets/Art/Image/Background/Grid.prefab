@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5957158718505754689}
   - component: {fileID: 5957158718505754688}
   - component: {fileID: 5957158718505754687}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6206,7 +6206,7 @@ GameObject:
   - component: {fileID: 1087179139}
   - component: {fileID: 1087179138}
   - component: {fileID: 1087179140}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lv
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12130,7 +12130,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -33030,7 +33030,7 @@ GameObject:
   - component: {fileID: 6625047043711152729}
   - component: {fileID: 3642324204578336415}
   - component: {fileID: 3330328894121438878}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ladder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

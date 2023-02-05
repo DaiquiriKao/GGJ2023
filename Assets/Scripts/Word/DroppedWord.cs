@@ -10,7 +10,7 @@ public class DroppedWord : MonoBehaviour
     public string partWord;
     public TextMeshProUGUI tmp;
     private Rigidbody2D rb;
-
+    private bool isGained = false;
     private IEnumerator PlayerGain()
     {
         yield return new WaitForSeconds(0.7f);
@@ -25,15 +25,19 @@ public class DroppedWord : MonoBehaviour
         }
         Destroy();
     }
-    public void Initialize(string s)
+    public void Initialize(string s, bool gain = true)
     {
         partWord = s;
         this.gameObject.name = partWord;
         tmp.text = partWord;
-        rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(8f * new Vector2(Random.Range(-0.5f, 0.5f), Random.Range(0.2f, 0.4f)));
-        if (GameObject.Find("Bag").GetComponent<Bag>().AddWord(partWord))
-            StartCoroutine(PlayerGain());
+        if (gain)
+        {
+            rb = GetComponent<Rigidbody2D>();
+            rb.AddForce(8f * new Vector2(Random.Range(-0.5f, 0.5f), Random.Range(0.2f, 0.4f)));
+            if (GameObject.Find("Bag").GetComponent<Bag>().AddWord(partWord))
+                StartCoroutine(PlayerGain());
+        }
+        isGained = gain;
     }
     public void Destroy()
     {
@@ -43,12 +47,12 @@ public class DroppedWord : MonoBehaviour
     {
         partWord = null;
     }
-    private void OnCollistionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D other)
     {
         if (!(other.collider.tag == "Player"))
             return;
         Bag bag = other.transform.GetChild(0).GetComponent<Bag>();
-        if (bag.isFull())
+        if (bag.isFull() || isGained)
             return;
         bag.AddWord(partWord);
         Invoke("Destroy", 0.5f);

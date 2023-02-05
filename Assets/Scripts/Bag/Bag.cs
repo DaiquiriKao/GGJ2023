@@ -22,7 +22,7 @@ public class Bag : MonoBehaviour
     
     public bool isFull()
     {
-        if (fields.Count >= MaxNumber)
+        if (words.Count >= MaxNumber)
             return true;
         else
             return false;
