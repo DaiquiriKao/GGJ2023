@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Y-axis",
+                    "type": "Value",
+                    "id": "a2581b1a-48e9-4956-beb3-a631c47a7123",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -121,6 +130,72 @@
                     "processors": "",
                     "groups": "",
                     "action": "X-axis",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Keyboard",
+                    "id": "7ee3286b-047c-4d6e-94d3-04166cfe46a4",
+                    "path": "1DAxis(minValue=1,maxValue=-1)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Y-axis",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "32300852-4fb4-4306-af88-825be37b8727",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Y-axis",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "097baf5c-3074-43b7-8733-d42f3dacce09",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Y-axis",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Arrow",
+                    "id": "b78d0fab-fe82-42b1-bd76-c23c0cf7b072",
+                    "path": "1DAxis(minValue=1,maxValue=-1)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Y-axis",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "b284ae84-73ad-4514-95d9-142382611db7",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Y-axis",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "532be2ce-613a-4c4a-8b75-886230890041",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Y-axis",
                     "isComposite": false,
                     "isPartOfComposite": true
                 }
