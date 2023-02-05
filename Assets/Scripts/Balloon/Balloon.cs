@@ -50,11 +50,11 @@ public class Balloon : MonoBehaviour
 
     private void WaitInput()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
             transform.position -= new Vector3(speed, 0, 0);
         }
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
             transform.position += new Vector3(speed, 0, 0);
         }
