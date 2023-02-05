@@ -44,6 +44,8 @@ public class Balloon : MonoBehaviour
         balloonPlayer.SetActive(true);
         isControllable = true;
         rigidBody.gravityScale = floatingSpeed;
+        GameObject.Find("Player").SetActive(false);
+        this.gameObject.tag = "Player";
     }
 
     private void WaitInput()
