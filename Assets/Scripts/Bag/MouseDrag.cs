@@ -55,6 +55,7 @@ public class MouseDrag : MonoBehaviour
                 }
             }
             transform.position = originPosition;
+            hasTaken = false;
         }
     }
     private void Drag()
@@ -79,5 +80,4 @@ public class MouseDrag : MonoBehaviour
         if (collision.tag == "Item")
             index = int.Parse(collision.name);
     }
-    
 }
