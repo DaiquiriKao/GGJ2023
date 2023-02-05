@@ -3710,8 +3710,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 1487.49}
-  m_SizeDelta: {x: 0, y: 2974.98}
+  m_AnchoredPosition: {x: 0, y: 1487.4901}
+  m_SizeDelta: {x: 0, y: 2974.9797}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1144692013
 MonoBehaviour:
@@ -3766,7 +3766,10 @@ MonoBehaviour:
   Levels:
   - {x: 0.0001220703, y: 2974.98}
   - {x: -1086.49, y: 1888.49}
-  - {x: -3247.49, y: -272.51}
+  - {x: -1949.49, y: 1025.49}
+  - {x: -2924.49, y: 50.48999}
+  - {x: -4054.49, y: -1079.51}
+  - {x: -5206.49, y: -2231.51}
   CurrentLevel: 0
 --- !u!1 &1160823652
 GameObject:
