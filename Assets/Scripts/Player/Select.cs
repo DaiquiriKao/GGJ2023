@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,9 @@ public class Select : MonoBehaviour
     public Vector2 MousePosition;
     [Space(20)]
     public Vector2 ClickPosition;
+
+    [NonSerialized]
+    public GameObject TakenObject = null;
     private void Update()
     {
         MouseTrack();
@@ -25,4 +29,18 @@ public class Select : MonoBehaviour
             CurrentObject = hit.collider.transform.gameObject;
         }
     }
+
+    public void SetTakeObject(GameObject gameObject)
+    {
+        if (gameObject != null)
+            TakenObject = gameObject;
+    }
+
+    public void RemoveTakeObject()
+    {
+        if (TakenObject != null)
+            TakenObject = null;
+    }
+
+
 }
