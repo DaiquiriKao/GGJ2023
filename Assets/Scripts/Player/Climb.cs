@@ -50,6 +50,7 @@ public class Climb : MonoBehaviour
         if (collision.name != LadderName || OnLadder || m_Climp.ReadValue<float>() == 0)
             return;
 
+        m_playerAnimation.SetBool("Climb", true);
         tempGravityScale = m_rb.gravityScale;
         m_rb.gravityScale = 0;
         m_rb.velocity = Vector3.zero;
@@ -64,6 +65,7 @@ public class Climb : MonoBehaviour
         if (collision.name != LadderName || !OnLadder)
             return;
 
+        m_playerAnimation.SetBool("Climb", false);
         m_rb.gravityScale = tempGravityScale;
 
         jump.enabled = true;
