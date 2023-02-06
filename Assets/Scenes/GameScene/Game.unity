@@ -7027,7 +7027,7 @@ MonoBehaviour:
             m_CallState: 2
       Ability: 2
   - word: flyer
-    image: {fileID: 21300000, guid: 74685bba5240e2e4b8c0e4bd436cd512, type: 3}
+    image: {fileID: -938794112, guid: fe0d472550d787c4f8d44286108cdccb, type: 3}
     effect:
       PartOfSpeech: 1
       InstantiateObject: {fileID: 0}
@@ -7173,7 +7173,7 @@ MonoBehaviour:
               m_BoolArgument: 1
             m_CallState: 2
       Ability: 2
-  - word: firball
+  - word: fireball
     image: {fileID: -1848399662, guid: 400363f059cb0254ca8912616189df23, type: 3}
     effect:
       PartOfSpeech: 2
@@ -7258,6 +7258,27 @@ MonoBehaviour:
             m_CallState: 2
       Ability: 2
   - word: emitter
+    image: {fileID: -1848399662, guid: 400363f059cb0254ca8912616189df23, type: 3}
+    effect:
+      PartOfSpeech: 0
+      InstantiateObject: {fileID: 4938921650268148678, guid: 2332565d1f7104a4d9342b109b929521, type: 3}
+      Skill:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 0}
+            m_TargetAssemblyTypeName: Crack, Assembly-CSharp
+            m_MethodName: OnTriggerEvent
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+      Ability: 2
+  - word: fly
     image: {fileID: -1848399662, guid: 400363f059cb0254ca8912616189df23, type: 3}
     effect:
       PartOfSpeech: 0
