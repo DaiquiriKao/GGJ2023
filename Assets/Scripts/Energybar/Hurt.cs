@@ -13,6 +13,7 @@ public class Hurt : MonoBehaviour
     public string DamgeObjectName = "DamgeObject";
     public float Damge = 1.0f;
     public float Power = 200.0f;
+    public SceneSwitcher Fail;
 
     public EnergyBar EnergyBar;
 
@@ -31,8 +32,8 @@ public class Hurt : MonoBehaviour
 
         if (collision.gameObject.tag == DamgeObjectName)
         {
-            EnergyBar.LostEnergy(Damge);
-
+            if (!EnergyBar.LostEnergy(Damge))
+                Fail.ChangeScene();
             if (HurtForce)
             {
                 //todo: 受傷之後動作
