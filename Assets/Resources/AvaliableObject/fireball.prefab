@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2796340817911315855}
   - component: {fileID: 2796340817911315854}
   - component: {fileID: 2796340817911315888}
+  - component: {fileID: 5321694276163526904}
   m_Layer: 5
   m_Name: fireball
   m_TagString: DamgeObject
@@ -31,7 +32,7 @@ RectTransform:
   m_GameObject: {fileID: 2796340817911315849}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.015, y: 0.015, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2796340819122594263}
@@ -136,7 +137,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.6809521, y: 0.26930237}
+  m_Offset: {x: 3.6391296, y: -3.2805023}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -147,7 +148,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 106.74786, y: 82.22626}
+  m_Size: {x: 221.52515, y: 153.22253}
   m_EdgeRadius: 0
 --- !u!114 &2796340817911315888
 MonoBehaviour:
@@ -162,8 +163,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   word: {fileID: 11400000, guid: 4d566292faa64e24d907422d098695c1, type: 2}
-  droppedWord: {fileID: 0}
+  droppedWord: {fileID: 6338175295552474687, guid: 1764c44b35434a944a33688f2173bebb, type: 3}
   isSplited: 0
+--- !u!114 &5321694276163526904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2796340817911315849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd5caf1cd5e8c3d4d9616e305f8365fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StayTime: 1
 --- !u!1 &2796340819122594262
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,17 +203,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2796340819122594262}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2796340817911315850}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -17.2, y: 75}
+  m_AnchoredPosition: {x: 15, y: 88}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2796340819122594265
@@ -323,7 +337,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2796340819205109421}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.23406607, y: -0.9722207, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -352,8 +366,8 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 0.9811321, g: 0.69789964, b: 0.69789964, a: 1}
-  m_Intensity: 1.78
+  m_Color: {r: 1, g: 0.82452834, b: 0.82452834, a: 1}
+  m_Intensity: 0.62
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -403,8 +417,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0.52
-  m_PointLightOuterRadius: 0.89836234
+  m_PointLightInnerRadius: 0.78
+  m_PointLightOuterRadius: 1.2627225
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
