@@ -9157,6 +9157,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1811947949883099059, guid: 1d0ed5e8b271b0e4a816c4a0d7d6eae4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1852303000, guid: 60ad34d28cd6ced4f91830900bc4ab70, type: 3}
     - target: {fileID: 1811947949883099070, guid: 1d0ed5e8b271b0e4a816c4a0d7d6eae4, type: 3}
       propertyPath: m_Name
       value: moon
