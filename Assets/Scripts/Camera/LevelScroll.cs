@@ -44,7 +44,7 @@ public class LevelScroll : MonoBehaviour
         //minInit.y *= -1;
         Vector2 maxInit = rect.offsetMax;
         //maxInit.y *= -1;
-        Debug.Log(minInit + " " + maxInit);
+        //Debug.Log(minInit + " " + maxInit);
         Vector2 minFinal = new Vector2(rect.offsetMin.x, Levels[targetLevel].x);
         Vector2 maxFinal = new Vector2(rect.offsetMax.x, Levels[targetLevel].y);
         for(float f = 0f; f<=1.5f;f+=Time.deltaTime)
