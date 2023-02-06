@@ -446,7 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7febdf95773724a85350ecd5b4df6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: SampleScene
+  SceneName: Game
   OnChangeScene:
     m_PersistentCalls:
       m_Calls:
