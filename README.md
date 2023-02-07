@@ -16,3 +16,12 @@ RooTup 是一款於 Global Game Jam 2023 主題為 Root 的活動下構思並創
 
 ## Root Word 言靈系統
 
+![image-20230207132449914](C:\Users\wujoe\AppData\Roaming\Typora\typora-user-images\image-20230207132449914.png)
+
+![image-20230207132502316](C:\Users\wujoe\AppData\Roaming\Typora\typora-user-images\image-20230207132502316.png)
+
+![image-20230207132531343](C:\Users\wujoe\AppData\Roaming\Typora\typora-user-images\image-20230207132531343.png)
+
+![image-20230207132617281](C:\Users\wujoe\AppData\Roaming\Typora\typora-user-images\image-20230207132617281.png)
+
+![image-20230207132559583](C:\Users\wujoe\AppData\Roaming\Typora\typora-user-images\image-20230207132559583.png)

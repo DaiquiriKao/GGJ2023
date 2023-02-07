@@ -9,13 +9,13 @@ public class LevelScroll : MonoBehaviour
     public int CurrentLevel = 0;
     private IEnumerator coroutine;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.G))
-            MoveUp();
-        else if(Input.GetKeyDown(KeyCode.F))
-            MoveDown();
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.G))
+    //        MoveUp();
+    //    else if(Input.GetKeyDown(KeyCode.F))
+    //        MoveDown();
+    //}
     public void MoveUp()
     {
         if (CurrentLevel + 1 == Levels.Length)

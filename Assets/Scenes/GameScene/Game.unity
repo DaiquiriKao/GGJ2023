@@ -7328,7 +7328,7 @@ MonoBehaviour:
             m_CallState: 2
       Ability: 2
   - word: fly
-    image: {fileID: -1848399662, guid: 400363f059cb0254ca8912616189df23, type: 3}
+    image: {fileID: 1249399735, guid: dbcfe313b0e366147a2a1c2c45d4fc99, type: 3}
     effect:
       PartOfSpeech: 0
       InstantiateObject: {fileID: 4938921650268148678, guid: 2332565d1f7104a4d9342b109b929521, type: 3}
