@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+<<<<<<< HEAD
 using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
+=======
+>>>>>>> 026bedf10c80dd151f4ed5653a1027062a5a0838
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -10,6 +13,7 @@ using UnityEngine.UIElements;
 
 public class BagDrag : MonoBehaviour
 {
+<<<<<<< HEAD
     public float DragItemEndDistance = 1.0f;
     public string BagItemName = "BagItem";
     public string WordItemTag = "Item";
@@ -26,6 +30,12 @@ public class BagDrag : MonoBehaviour
         bag = GetComponent<Bag>();
         BagItems = BagList.GetComponentsInChildren<Transform>()
             .Where(x => x.gameObject.name.Length > 6 && x.gameObject.name.Substring(0, 7) == BagItemName).ToArray();
+=======
+
+    void Start()
+    {
+        
+>>>>>>> 026bedf10c80dd151f4ed5653a1027062a5a0838
     }
 
     void Update()
@@ -37,6 +47,7 @@ public class BagDrag : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+<<<<<<< HEAD
             Vector2 rayPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             if (mouseClickObject != null)
@@ -124,4 +135,23 @@ public class BagDrag : MonoBehaviour
         return tempVector2;
     }
 
+=======
+            PointerEventData pointer = new PointerEventData(EventSystem.current);
+            pointer.position = Input.mousePosition;
+
+            List<RaycastResult> raycastResults = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(pointer, raycastResults);
+
+            Vector2 rayPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            if (raycastResults.Count > 0 && raycastResults[0].gameObject.tag == "EditorOnly")
+            {
+                Debug.Log(Input.mousePosition);
+                raycastResults[0].gameObject.transform.position = rayPos;
+            }
+
+
+        }
+    }
+>>>>>>> 026bedf10c80dd151f4ed5653a1027062a5a0838
 }
