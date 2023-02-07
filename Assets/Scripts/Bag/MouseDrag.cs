@@ -20,10 +20,10 @@ public class MouseDrag : MonoBehaviour
     private string PrefabLocation = "AvaliableObject/";
     // Update is called once per frame
     void Update()
-    { 
-        if (Input.GetMouseButton(0) && select.CurrentObject == this.gameObject)
+    {
+        if (Input.GetMouseButton(0) && (select.CurrentObject == this.gameObject & select.TakenObject == null) | hasTaken)
             Drag();
-        else if(hasTaken && Input.GetMouseButtonUp(0))
+        else if (hasTaken && Input.GetMouseButtonUp(0))
         {
             if (index != -1) // inside
             {
@@ -31,7 +31,7 @@ public class MouseDrag : MonoBehaviour
                 int maxCheck = Mathf.Clamp(index + 2, 0, bag.words.Count - 1);
                 float f = Mathf.Infinity;
                 int minIndex = minCheck;
-                if (minCheck-1 <= index && index <= maxCheck+1)
+                if (minCheck - 1 <= index && index <= maxCheck + 1)
                 {
                     for (int i = minCheck; i <= maxCheck; i++)
                     {
@@ -52,7 +52,7 @@ public class MouseDrag : MonoBehaviour
                 Collider2D temp = Physics2D.OverlapBox(transform.position, new Vector2(1f, 1f), 0f, EnvironmentMask);
                 if (temp == null) // outside and not collide with environment
                 {
-                    if (bag.IconList.isAvaliableWord(bag.words[int.Parse(gameObject.name)])==null)
+                    if (bag.IconList.isAvaliableWord(bag.words[int.Parse(gameObject.name)]) == null)
                     {
                         GameObject drop = GameObject.Instantiate(DroppedWord, transform.position, Quaternion.identity, Canvas);
                         drop.GetComponent<DroppedWord>().Initialize(bag.words[int.Parse(gameObject.name)], false);
@@ -68,23 +68,25 @@ public class MouseDrag : MonoBehaviour
             }
             transform.position = originPosition;
             hasTaken = false;
+            select.RemoveTakeObject();
         }
     }
     private void Drag()
     {
         if (!CanDrag)
             return;
-        if(!hasTaken)
+        if (!hasTaken)
         {
             hasTaken = true;
             originPosition = transform.position;
+            select.SetTakeObject(this.gameObject);
         }
         Vector2 castPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         this.gameObject.transform.position = castPoint;
     }
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.tag == "Item")
+        if (other.tag == "Item")
             index = -1;
     }
     private void OnTriggerStay2D(Collider2D collision)
