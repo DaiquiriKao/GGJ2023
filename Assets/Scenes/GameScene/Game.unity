@@ -1016,9 +1016,21 @@ PrefabInstance:
       propertyPath: m_GeometryType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 455666265705481410, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 455666265705481410, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8835624094dc47f4889744359f065bab, type: 2}
     - target: {fileID: 1756058627798569670, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1756058627798569670, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2916216573149948988, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
       propertyPath: m_Layer
@@ -1026,6 +1038,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3330328894121438878, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
       propertyPath: m_GeometryType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3330328894121438878, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
+      propertyPath: m_ColliderPaths.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3634917413687258237, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
@@ -1072,6 +1088,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3917956819603892171, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4794211092119142334, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -1080,6 +1100,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5825697930417827786, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8835624094dc47f4889744359f065bab, type: 2}
+    - target: {fileID: 5867812639537054000, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5867812639537054000, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8835624094dc47f4889744359f065bab, type: 2}
+    - target: {fileID: 5957158718505754687, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
+      propertyPath: m_ColliderPaths.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6824959590351267364, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8835624094dc47f4889744359f065bab, type: 2}
     - target: {fileID: 7662145636261590409, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
       propertyPath: m_Name
       value: Grid
@@ -1088,9 +1128,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 7662145636261590409, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8298510503188896711, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8298510503188896711, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47c6e3b2ae88a7244a7fc4d7b8f97c87, type: 3}
