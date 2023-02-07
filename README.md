@@ -20,24 +20,24 @@ RooTup 是一款於 Global Game Jam 2023 主題為 Root 的活動下構思並創
 
 + 靠近物體
 
-<img src="https://i.imgur.com/ChOI4TC.png" width="370" />
+	<img src="https://i.imgur.com/ChOI4TC.png" width="370" />
 
 + 滑鼠點擊
 
-<img src="https://i.imgur.com/fChPsOp.png" width="370" />
+	<img src="https://i.imgur.com/fChPsOp.png" width="370" />
 
 + 背包中言靈拖曳
 
-<img src="https://i.imgur.com/zpfVKuq.png" width="370" />
+	<img src="https://i.imgur.com/zpfVKuq.png" width="370" />
 
 + 組合文字
 
-<img src="https://i.imgur.com/iyYVE4H.png" width="370" />
+	<img src="https://i.imgur.com/iyYVE4H.png" width="370" />
 
 + 拖曳至畫面中
 
-<img src="https://i.imgur.com/VfnlyD8.png" width="370" />
+	<img src="https://i.imgur.com/VfnlyD8.png" width="370" />
 
 + 使用言靈力量
-
-<img src="https://i.imgur.com/ChOI4TC.png" width="370" />
+	
+	<img src="https://i.imgur.com/ChOI4TC.png" width="370" />
