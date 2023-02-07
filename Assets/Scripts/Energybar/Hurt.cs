@@ -18,6 +18,7 @@ public class Hurt : MonoBehaviour
     public EnergyBar EnergyBar;
 
     private Rigidbody2D rigidbody2;
+    private bool isHurting = false;
 
     void Start()
     {
@@ -29,14 +30,16 @@ public class Hurt : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
+        if (isHurting)
+            return;
         if (collision.gameObject.tag == DamgeObjectName)
         {
+            isHurting = true;
+
             if (!EnergyBar.LostEnergy(Damge))
                 Fail.ChangeScene();
             if (HurtForce)
             {
-                //todo: 受傷之後動作
                 float vector = (gameObject.transform.position.x - collision.transform.position.x)
                     / Mathf.Abs(gameObject.transform.position.x - collision.transform.position.x);
 
@@ -49,6 +52,10 @@ public class Hurt : MonoBehaviour
                 }
 
                 StartCoroutine(FlashRed(Image, 3));
+            }
+            else
+            {
+                isHurting = false;
             }
         }
     }
@@ -63,5 +70,6 @@ public class Hurt : MonoBehaviour
             image.color = TempColor;
             yield return new WaitForSeconds(0.2f);
         }
+        isHurting = false;
     }
 }
